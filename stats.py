@@ -5,10 +5,10 @@ def counting_character(string):
     unique_characters = {}
     for char in string:
         lower_char = char.lower()
-        if lower_char in unique_characters:
-            unique_characters[lower_char] += 1
-        else:
-            unique_characters[lower_char] = 1
+        
+        unique_characters.setdefault(lower_char, 1)
+        unique_characters[lower_char] += 1
+        
     return unique_characters
 
 def sorter(dictionary):
